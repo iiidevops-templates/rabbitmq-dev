@@ -33,7 +33,7 @@ stages:
   iiidevops: deployed-environments
   steps:
   - env:
-      deploy_name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-rabbitmq
+      deploy_name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-rbmq
       max_wait: 128
       namespace: ${CICD_GIT_REPO_NAME}
     envFrom:
