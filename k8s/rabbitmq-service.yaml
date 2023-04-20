@@ -9,12 +9,12 @@ metadata:
     iiidevops.org/project_name: "${CICD_GIT_REPO_NAME}"
     iiidevops.org/branch: "${CICD_GIT_BRANCH}"
     iiidevops.org/commit_id: "${CICD_GIT_COMMIT}"
-    iiidevops.org/type: "db-server"
+    iiidevops.org/type: "web-server"
 spec:
   type: NodePort
   selector:
-    app: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-redis
+    app: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-rabbitmq
   ports:
     - protocol: TCP
-      port: 6379
-      targetPort: 6379
+      port: 8080
+      targetPort: 8080
