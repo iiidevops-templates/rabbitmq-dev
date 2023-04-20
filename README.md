@@ -7,6 +7,6 @@
 ### 啟動自動匯入資料的方式
 
 1. 目前 [RabbitMQ](https://hub.docker.com/_/rabbitmq) 使用 3 的版本，可依需求進行調整。
-2. 可修改 iiidevops/app.env 內的設定內容來修改預設帳號與密碼。
+2. 可修改 k8s/rabbitmq-deployment.yaml 內的 env: 來修改預設帳號(RABBITMQ_DEFAULT_USER)與密碼(RABBITMQ_DEFAULT_PASS)的設定值。
 3. 建置完成後，請從「實證環境」中獲取的服務連線資訊進入使用。
 

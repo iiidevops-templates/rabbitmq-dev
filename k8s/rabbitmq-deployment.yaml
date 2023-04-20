@@ -25,3 +25,8 @@ spec:
         name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-rabbitmq
         ports:
         - containerPort: 8080
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: "iiidevops"
+        - name: RABBITMQ_DEFAULT_PASS
+          value: "templatePassword"
