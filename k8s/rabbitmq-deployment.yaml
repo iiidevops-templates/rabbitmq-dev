@@ -24,7 +24,10 @@ spec:
       - image: rabbitmq:3-management
         name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-rabbitmq
         ports:
-        - containerPort: 8080
+        - containerPort: 5672
+          name: rbmq-tcp-5672
+        - containerPort: 15672
+          name: rbmq-tcp-15672
         env:
         - name: RABBITMQ_DEFAULT_USER
           value: "iiidevops"
