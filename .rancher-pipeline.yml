@@ -34,38 +34,29 @@ stages:
     branch:
       include:
       - master
-- name: Deploy--Redis-config
+- name: Deploy--RabbitMQ
   iiidevops: deployed-environments
   steps:
   - applyYamlConfig:
-      path: ./k8s/redis-config.yaml
+      path: ./k8s/rabbitmq-deployment.yaml
   when:
     branch:
       include:
       - master
-- name: Deploy--Redis
+- name: Deploy--RabbitMQ-service
   iiidevops: deployed-environments
   steps:
   - applyYamlConfig:
-      path: ./k8s/redis-deployment.yaml
+      path: ./k8s/rabbitmq-service.yaml
   when:
     branch:
       include:
       - master
-- name: Deploy--Redis-service
-  iiidevops: deployed-environments
-  steps:
-  - applyYamlConfig:
-      path: ./k8s/redis-service.yaml
-  when:
-    branch:
-      include:
-      - master
-- name: Deploy--Wait Redis deployment
+- name: Deploy--Wait RabbitMQ deployment
   iiidevops: deployed-environments
   steps:
   - env:
-      deploy_name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-redis
+      deploy_name: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-rabbitmq
       max_wait: 128
       namespace: ${CICD_GIT_REPO_NAME}
     envFrom:
