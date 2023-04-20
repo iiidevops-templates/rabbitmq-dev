@@ -15,6 +15,9 @@ spec:
   selector:
     app: ${CICD_GIT_REPO_NAME}-${CICD_GIT_BRANCH}-rabbitmq
   ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
+    - name: rbmq-tcp-5672
+      protocol: TCP
+      port: 5672
+    - name: rbmq-tcp-15672
+      protocol: TCP
+      port: 15672
